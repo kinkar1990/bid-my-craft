@@ -1,0 +1,363 @@
+<app-header></app-header>
+<section class="banner__slider">
+  <div class="slider stick-dots">
+    <ngx-slick-carousel class="carousel" 
+                        #slickModal="slick-carousel" 
+                        [config]="slideConfig" 
+                        (init)="slickInit($event)"
+                        (breakpoint)="breakpoint($event)"
+                        (afterChange)="afterChange($event)"
+                        (beforeChange)="beforeChange($event)">
+        <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+              <img src="{{ slide.img }}" alt="" width="100%">
+        </div>
+    </ngx-slick-carousel>
+  </div>
+  <!-- <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44px" height="44px" id="circle" fill="none" stroke="currentColor">
+          <circle r="20" cy="22" cx="22" id="test"></circle>
+      </symbol>
+  </svg> -->
+</section>
+<!-- Cruel Type A -->
+<section class="cruel-type-a rcnt-coln">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <h2 class="section-heading text-center mb-4">
+                  Recent Collection
+              </h2>
+              <p class="rcnt-coln-subheading text-center mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          </div>
+      </div>
+  </div>
+  <div class="cruel-type-a-slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
+      <!-- item-1 -->
+      <div class="cruel-type-a-items">
+          <div class="cruel-type-a-pro">
+              <img src="../assets/images/img-1.jpg">
+              <div class="typeAoverlay"></div>
+              <div class="typeAbtns">
+                  <a href="javascript:void(0);"><i class="fas fa-search"></i></a><br>
+                  <a href="javascript:void(0);"><i class="fas fa-shopping-cart"></i></a>
+              </div>
+          </div>
+          <p class="typeAtitle text-center">Lorem Ipsum is simply dummy</p>
+      </div>
+      <!-- item-2 -->
+      <div class="cruel-type-a-items">
+          <div class="cruel-type-a-pro">
+              <img src="../assets/images/img-2.jpg">
+              <div class="typeAoverlay"></div>
+              <div class="typeAbtns">
+                  <a href="javascript:void(0);"><i class="fas fa-search"></i></a><br>
+                  <a href="javascript:void(0);"><i class="fas fa-shopping-cart"></i></a>
+              </div>
+          </div>
+          <p class="typeAtitle text-center">Lorem Ipsum is simply dummy</p>
+      </div>
+      <!-- item-3 -->
+      <div class="cruel-type-a-items">
+          <div class="cruel-type-a-pro">
+              <img src="../assets/images/img-3.jpg">
+              <div class="typeAoverlay"></div>
+              <div class="typeAbtns">
+                  <a href="javascript:void(0);"><i class="fas fa-search"></i></a><br>
+                  <a href="javascript:void(0);"><i class="fas fa-shopping-cart"></i></a>
+              </div>
+          </div>
+          <p class="typeAtitle text-center">Lorem Ipsum is simply dummy</p>
+      </div>
+      <!-- item-4 -->
+      <div class="cruel-type-a-items">
+          <div class="cruel-type-a-pro">
+              <img src="../assets/images/img-4.jpg">
+              <div class="typeAoverlay"></div>
+              <div class="typeAbtns">
+                  <a href="javascript:void(0);"><i class="fas fa-search"></i></a><br>
+                  <a href="javascript:void(0);"><i class="fas fa-shopping-cart"></i></a>
+              </div>
+          </div>
+          <p class="typeAtitle text-center">Lorem Ipsum is simply dummy</p>
+      </div>
+      <!-- item-3 -->
+      <div class="cruel-type-a-items">
+          <div class="cruel-type-a-pro">
+              <img src="../assets/images/img-3.jpg">
+              <div class="typeAoverlay"></div>
+              <div class="typeAbtns">
+                  <a href="javascript:void(0);"><i class="fas fa-search"></i></a><br>
+                  <a href="javascript:void(0);"><i class="fas fa-shopping-cart"></i></a>
+              </div>
+          </div>
+          <p class="typeAtitle text-center">Lorem Ipsum is simply dummy</p>
+      </div>
+      <!-- item-4 -->
+      <div class="cruel-type-a-items">
+          <div class="cruel-type-a-pro">
+              <img src="../assets/images/img-4.jpg">
+              <div class="typeAoverlay"></div>
+              <div class="typeAbtns">
+                  <a href="javascript:void(0);"><i class="fas fa-search"></i></a><br>
+                  <a href="javascript:void(0);"><i class="fas fa-shopping-cart"></i></a>
+              </div>
+          </div>
+          <p class="typeAtitle text-center">Lorem Ipsum is simply dummy</p>
+      </div>
+  </div>
+  <div class="typeAbtn text-center">
+      <a href="javascript:void(0);" class="typeAbtnOrg">View More</a>
+  </div>
+</section>
+<!-- /.Cruel Type A -->
+
+<!-- Cruel Type B -->
+<section class="cruel-type-b absArt">
+  <div class="container">
+      <div class="row">
+          <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-2 absArts-bg pr-md-2 pr-lg-0 pr-xl-0 mb-3 mb-sm-3 mb-md-0 mb-lg-0 mb-xl-0">
+              <div class="absArts d-flex flex-wrap justify-content-center text-center">
+                  <h3 class="mb-5 mb-sm-5 mb-md-0 mb-lg-0 mb-xl-0">Abstract <br class="d-none d-sm-none d-md-none d-lg-block d-xl-block">Art</h3>
+                  <a href="javascript:void(0);" class="align-self-end mt-5 mt-sm-5 mt-md-0 mt-lg-0 mt-xl-0">View More</a>
+              </div>
+          </div>
+          <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-10 pl-md-0 pl-lg-0 pl-xl-0">
+              <div class="absArt-crasule" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
+                  <!-- item 1 -->
+                  <div class="absArt-items">
+                      <div class="absArt-pro">
+                          <img src="../assets/images/img-5.jpg">
+                          <div class="typeBoverlay"></div>
+                          <div class="typeBbtns">
+                              <p class="abs-title">Name Here</p>
+                              <a href="javascript:void(0);"><i class="fas fa-link"></i></a>
+                              <a href="javascript:void(0);"><i class="fas fa-search"></i></a>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- item 2 -->
+                  <div class="absArt-items">
+                      <div class="absArt-pro">
+                          <img src="../assets/images/img-6.jpg">
+                          <div class="typeBoverlay"></div>
+                          <div class="typeBbtns">
+                              <p class="abs-title">Name Here</p>
+                              <a href="javascript:void(0);"><i class="fas fa-link"></i></a>
+                              <a href="javascript:void(0);"><i class="fas fa-search"></i></a>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- item 3 -->
+                  <div class="absArt-items">
+                      <div class="absArt-pro">
+                          <img src="../assets/images/img-7.jpg">
+                          <div class="typeBoverlay"></div>
+                          <div class="typeBbtns">
+                              <p class="abs-title">Name Here</p>
+                              <a href="javascript:void(0);"><i class="fas fa-link"></i></a>
+                              <a href="javascript:void(0);"><i class="fas fa-search"></i></a>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- item 4 -->
+                  <div class="absArt-items">
+                      <div class="absArt-pro">
+                          <img src="../assets/images/img-8.jpg">
+                          <div class="typeBoverlay"></div>
+                          <div class="typeBbtns">
+                              <p class="abs-title">Name Here</p>
+                              <a href="javascript:void(0);"><i class="fas fa-link"></i></a>
+                              <a href="javascript:void(0);"><i class="fas fa-search"></i></a>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- item 5 -->
+                  <div class="absArt-items">
+                      <div class="absArt-pro">
+                          <img src="../assets/images/img-5.jpg">
+                          <div class="typeBoverlay"></div>
+                          <div class="typeBbtns">
+                              <p class="abs-title">Name Here</p>
+                              <a href="javascript:void(0);"><i class="fas fa-link"></i></a>
+                              <a href="javascript:void(0);"><i class="fas fa-search"></i></a>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- item 6 -->
+                  <div class="absArt-items">
+                      <div class="absArt-pro">
+                          <img src="../assets/images/img-6.jpg">
+                          <div class="typeBoverlay"></div>
+                          <div class="typeBbtns">
+                              <p class="abs-title">Name Here</p>
+                              <a href="javascript:void(0);"><i class="fas fa-link"></i></a>
+                              <a href="javascript:void(0);"><i class="fas fa-search"></i></a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- /.Cruel Type B -->
+
+<!-- Cruel Type C -->
+<section class="cruel-type-c mrdnArt">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <div class="mrdnArtHeading text-center">
+                  <h3 class="text-uppercase">Modern Art</h3>
+                  <img src="../assets/images/heading-bg.png" alt="" class="heading-bg">
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+              <div class="mrdnArt-items">
+                  <span class="mrdnArtBdr">
+                      <img src="../assets/images/img-9.jpg">
+                  </span>
+                  <p class="mrdnArtTitle">Art Title here</p>
+                  <div class="mrdnArtOverlay"></div>
+                  <div class="mrdnArtBtn">
+                      <a href="javascript:void(0);"><i class="fas fa-link"></i></a>
+                  </div>
+              </div>
+              <div class="mrdnArt-items">
+                  <span class="mrdnArtBdr">
+                      <img src="../assets/images/img-10.jpg">
+                  </span>
+                  <p class="mrdnArtTitle">Art Title here</p>
+                  <div class="mrdnArtOverlay"></div>
+                  <div class="mrdnArtBtn">
+                      <a href="javascript:void(0);"><i class="fas fa-link"></i></a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 cruelTypeCsingle">
+              <div class="mrdnArt-items">
+                  <span class="mrdnArtBdr">
+                      <img src="../assets/images/img-11.jpg">
+                  </span>
+                  <p class="mrdnArtTitle">Art Title here</p>
+                  <div class="mrdnArtOverlay"></div>
+                  <div class="mrdnArtBtn">
+                      <a href="javascript:void(0);"><i class="fas fa-link"></i></a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+              <div class="mrdnArt-items">
+                  <span class="mrdnArtBdr">
+                      <img src="../assets/images/img-12.jpg">
+                  </span>
+                  <p class="mrdnArtTitle">Art Title here</p>
+                  <div class="mrdnArtOverlay"></div>
+                  <div class="mrdnArtBtn">
+                      <a href="javascript:void(0);"><i class="fas fa-link"></i></a>
+                  </div>
+              </div>
+              <div class="mrdnArt-items">
+                  <span class="mrdnArtBdr">
+                      <img src="../assets/images/img-13.jpg">
+                  </span>
+                  <p class="mrdnArtTitle">Art Title here</p>
+                  <div class="mrdnArtOverlay"></div>
+                  <div class="mrdnArtBtn">
+                      <a href="javascript:void(0);"><i class="fas fa-link"></i></a>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-12">
+              <div class="typeAbtn text-center mrdnArtbtns">
+                  <a href="javascript:void(0);" class="typeAbtnOrg">View More</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- /.Cruel Type C -->
+
+<!-- Cruel Type D -->
+<section class="cruel-type-d clsl">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <div class="mrdnArtHeading text-center">
+                  <h3 class="text-uppercase">Indian Classical Arts</h3>
+                  <img src="../assets/images/heading-bg-white.png" alt="" class="heading-bg">
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="typeDslider" data-slick='{"slidesToShow": 3, "slidesToScroll": 1, "centerMode": true, "centerPadding": "60px", "cssEase": "ease"}'>
+      <!-- Item 1 -->
+      <div class="typeDitems">
+          <div class="typeDitemsCont">
+              <a href="javascript:void(0)">
+                  <img src="../assets/images/img-14.jpg">
+                  <p>Art Title here</p>
+              </a>
+          </div>
+      </div>
+      <!-- Item 2 -->
+      <div class="typeDitems">
+          <div class="typeDitemsCont">
+              <a href="javascript:void(0)">
+                  <img src="../assets/images/img-15.jpg">
+                  <p>Art Title here</p>
+              </a>
+          </div>
+      </div>
+      <!-- Item 3 -->
+      <div class="typeDitems">
+          <div class="typeDitemsCont">
+              <a href="javascript:void(0)">
+                  <img src="../assets/images/img-14.jpg">
+                  <p>Art Title here</p>
+              </a>
+          </div>
+      </div>
+      <!-- Item 4 -->
+      <div class="typeDitems">
+          <div class="typeDitemsCont">
+              <a href="javascript:void(0)">
+                  <img src="../assets/images/img-15.jpg">
+                  <p>Art Title here</p>
+              </a>
+          </div>
+      </div>
+      <!-- Item 5 -->
+      <div class="typeDitems">
+          <div class="typeDitemsCont">
+              <a href="javascript:void(0)">
+                  <img src="../assets/images/img-14.jpg">
+                  <p>Art Title here</p>
+              </a>
+          </div>
+      </div>
+      <!-- Item 5 -->
+      <div class="typeDitems">
+          <div class="typeDitemsCont">
+              <a href="javascript:void(0)">
+                  <img src="../assets/images/img-15.jpg">
+                  <p>Art Title here</p>
+              </a>
+          </div>
+      </div>
+
+  </div>
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <div class="typeAbtn text-center mrdnArtbtns">
+                  <a href="javascript:void(0);" class="typeAbtnOrg">View More</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<app-footer></app-footer>
