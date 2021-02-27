@@ -1,17 +1,25 @@
 <app-header></app-header>
 <section class="banner__slider">
   <div class="slider stick-dots">
-    <ngx-slick-carousel class="carousel" 
+    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel"
                         #slickModal="slick-carousel" 
                         [config]="slideConfig" 
-                        (init)="slickInit($event)"
-                        (breakpoint)="breakpoint($event)"
-                        (afterChange)="afterChange($event)"
-                        (beforeChange)="beforeChange($event)">
-        <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-              <img src="{{ slide.img }}" alt="" width="100%">
-        </div>
-    </ngx-slick-carousel>
+    >
+        <div ngxSlickItem *ngFor="let slide of slides" class="slide" width="100%">
+            <div class="slide__img">
+                <img src="{{ slide.img }}" alt="" class="full-image animated" data-animation-in="zoomInImage" />
+            </div>
+            <div class="slide__content ">
+                <div class="slide__content--headings text-center">
+                    <p class="animated top-title" data-animation-in="fadeInUp" data-delay-in="0.3"><span>Lorem Ipsum is simply dummy text of the printing</span></p>
+                    <h2 class="animated title" data-animation-in="fadeInUp"><a href="javascript:void(0);"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+                </div>
+            </div>
+        </div>                
+  </ngx-slick-carousel>
+  <button class="btn-prev" (click)="prev()">prev</button>
+  <button class="btn-next" (click)="next()">next</button>
+
   </div>
   <!-- <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
       <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44px" height="44px" id="circle" fill="none" stroke="currentColor">
@@ -31,79 +39,23 @@
           </div>
       </div>
   </div>
-  <div class="cruel-type-a-slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
-      <!-- item-1 -->
-      <div class="cruel-type-a-items">
-          <div class="cruel-type-a-pro">
-              <img src="../assets/images/img-1.jpg">
-              <div class="typeAoverlay"></div>
-              <div class="typeAbtns">
-                  <a href="javascript:void(0);"><i class="fas fa-search"></i></a><br>
-                  <a href="javascript:void(0);"><i class="fas fa-shopping-cart"></i></a>
-              </div>
+  <div>
+    <ngx-slick-carousel class="carousel" 
+                        #slickModal="slick-carousel" 
+                        [config]="slideConfig1" 
+    >
+    <div ngxSlickItem *ngFor="let slide of slides" >
+      <div class="cruel-type-a-pro">
+          <img src="../assets/images/img-1.jpg">
+          <div class="typeAoverlay"></div>
+          <div class="typeAbtns">
+              <a href="javascript:void(0);"><i class="fas fa-search"></i></a><br>
+              <a href="javascript:void(0);"><i class="fas fa-shopping-cart"></i></a>
           </div>
-          <p class="typeAtitle text-center">Lorem Ipsum is simply dummy</p>
       </div>
-      <!-- item-2 -->
-      <div class="cruel-type-a-items">
-          <div class="cruel-type-a-pro">
-              <img src="../assets/images/img-2.jpg">
-              <div class="typeAoverlay"></div>
-              <div class="typeAbtns">
-                  <a href="javascript:void(0);"><i class="fas fa-search"></i></a><br>
-                  <a href="javascript:void(0);"><i class="fas fa-shopping-cart"></i></a>
-              </div>
-          </div>
-          <p class="typeAtitle text-center">Lorem Ipsum is simply dummy</p>
-      </div>
-      <!-- item-3 -->
-      <div class="cruel-type-a-items">
-          <div class="cruel-type-a-pro">
-              <img src="../assets/images/img-3.jpg">
-              <div class="typeAoverlay"></div>
-              <div class="typeAbtns">
-                  <a href="javascript:void(0);"><i class="fas fa-search"></i></a><br>
-                  <a href="javascript:void(0);"><i class="fas fa-shopping-cart"></i></a>
-              </div>
-          </div>
-          <p class="typeAtitle text-center">Lorem Ipsum is simply dummy</p>
-      </div>
-      <!-- item-4 -->
-      <div class="cruel-type-a-items">
-          <div class="cruel-type-a-pro">
-              <img src="../assets/images/img-4.jpg">
-              <div class="typeAoverlay"></div>
-              <div class="typeAbtns">
-                  <a href="javascript:void(0);"><i class="fas fa-search"></i></a><br>
-                  <a href="javascript:void(0);"><i class="fas fa-shopping-cart"></i></a>
-              </div>
-          </div>
-          <p class="typeAtitle text-center">Lorem Ipsum is simply dummy</p>
-      </div>
-      <!-- item-3 -->
-      <div class="cruel-type-a-items">
-          <div class="cruel-type-a-pro">
-              <img src="../assets/images/img-3.jpg">
-              <div class="typeAoverlay"></div>
-              <div class="typeAbtns">
-                  <a href="javascript:void(0);"><i class="fas fa-search"></i></a><br>
-                  <a href="javascript:void(0);"><i class="fas fa-shopping-cart"></i></a>
-              </div>
-          </div>
-          <p class="typeAtitle text-center">Lorem Ipsum is simply dummy</p>
-      </div>
-      <!-- item-4 -->
-      <div class="cruel-type-a-items">
-          <div class="cruel-type-a-pro">
-              <img src="../assets/images/img-4.jpg">
-              <div class="typeAoverlay"></div>
-              <div class="typeAbtns">
-                  <a href="javascript:void(0);"><i class="fas fa-search"></i></a><br>
-                  <a href="javascript:void(0);"><i class="fas fa-shopping-cart"></i></a>
-              </div>
-          </div>
-          <p class="typeAtitle text-center">Lorem Ipsum is simply dummy</p>
-      </div>
+      <p class="typeAtitle text-center">Lorem Ipsum is simply dummy</p>
+  </div>                
+  </ngx-slick-carousel>
   </div>
   <div class="typeAbtn text-center">
       <a href="javascript:void(0);" class="typeAbtnOrg">View More</a>
@@ -123,78 +75,22 @@
           </div>
           <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-10 pl-md-0 pl-lg-0 pl-xl-0">
               <div class="absArt-crasule" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
-                  <!-- item 1 -->
-                  <div class="absArt-items">
-                      <div class="absArt-pro">
-                          <img src="../assets/images/img-5.jpg">
-                          <div class="typeBoverlay"></div>
-                          <div class="typeBbtns">
-                              <p class="abs-title">Name Here</p>
-                              <a href="javascript:void(0);"><i class="fas fa-link"></i></a>
-                              <a href="javascript:void(0);"><i class="fas fa-search"></i></a>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- item 2 -->
-                  <div class="absArt-items">
-                      <div class="absArt-pro">
-                          <img src="../assets/images/img-6.jpg">
-                          <div class="typeBoverlay"></div>
-                          <div class="typeBbtns">
-                              <p class="abs-title">Name Here</p>
-                              <a href="javascript:void(0);"><i class="fas fa-link"></i></a>
-                              <a href="javascript:void(0);"><i class="fas fa-search"></i></a>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- item 3 -->
-                  <div class="absArt-items">
-                      <div class="absArt-pro">
-                          <img src="../assets/images/img-7.jpg">
-                          <div class="typeBoverlay"></div>
-                          <div class="typeBbtns">
-                              <p class="abs-title">Name Here</p>
-                              <a href="javascript:void(0);"><i class="fas fa-link"></i></a>
-                              <a href="javascript:void(0);"><i class="fas fa-search"></i></a>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- item 4 -->
-                  <div class="absArt-items">
-                      <div class="absArt-pro">
-                          <img src="../assets/images/img-8.jpg">
-                          <div class="typeBoverlay"></div>
-                          <div class="typeBbtns">
-                              <p class="abs-title">Name Here</p>
-                              <a href="javascript:void(0);"><i class="fas fa-link"></i></a>
-                              <a href="javascript:void(0);"><i class="fas fa-search"></i></a>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- item 5 -->
-                  <div class="absArt-items">
-                      <div class="absArt-pro">
-                          <img src="../assets/images/img-5.jpg">
-                          <div class="typeBoverlay"></div>
-                          <div class="typeBbtns">
-                              <p class="abs-title">Name Here</p>
-                              <a href="javascript:void(0);"><i class="fas fa-link"></i></a>
-                              <a href="javascript:void(0);"><i class="fas fa-search"></i></a>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- item 6 -->
-                  <div class="absArt-items">
-                      <div class="absArt-pro">
-                          <img src="../assets/images/img-6.jpg">
-                          <div class="typeBoverlay"></div>
-                          <div class="typeBbtns">
-                              <p class="abs-title">Name Here</p>
-                              <a href="javascript:void(0);"><i class="fas fa-link"></i></a>
-                              <a href="javascript:void(0);"><i class="fas fa-search"></i></a>
-                          </div>
-                      </div>
-                  </div>
+                <ngx-slick-carousel class="carousel" 
+                        #slickModal="slick-carousel" 
+                        [config]="slideConfig1" 
+                  >
+                  <div ngxSlickItem *ngFor="let slide of slides" >
+                    <div class="cruel-type-a-pro">
+                        <img src="../assets/images/img-5.jpg">
+                        <div class="typeAoverlay"></div>
+                        <div class="typeAbtns">
+                            <a href="javascript:void(0);"><i class="fas fa-search"></i></a><br>
+                            <a href="javascript:void(0);"><i class="fas fa-shopping-cart"></i></a>
+                        </div>
+                    </div>
+                    <p class="typeAtitle text-center">Lorem Ipsum is simply dummy</p>
+                </div>                
+                </ngx-slick-carousel>
               </div>
           </div>
       </div>

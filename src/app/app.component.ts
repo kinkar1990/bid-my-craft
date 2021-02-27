@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild } from '@angular/core';
+import { SlickCarouselComponent } from 'ngx-slick-carousel';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
   title = 'bid-my-craft';
   slides = [
@@ -13,36 +15,25 @@ export class AppComponent {
     {img: "../assets/images/banner-1.jpg"},
     {img: "../assets/images/banner-1.jpg"}
   ];
+  @ViewChild('slickModal') slickModal: SlickCarouselComponent;
   slideConfig = {
+    "slidesToShow": 1,
+    "slidesToScroll": 1
+  };
+
+  slideConfig1 = {
     "slidesToShow": 4,
     "slidesToScroll": 1,
-    "nextArrow": "<div class='nav-btn next-slide'></div>",
-    "prevArrow": "<div class='nav-btn prev-slide'></div>",
-    "dots": true,
-    "infinite": false
+    autoplay:true,
+    "infinite": true
   };
   
-  addSlide() {
-    this.slides.push({img: "http://placehold.it/350x150/777777"})
-  }
+next() {
+  this.slickModal.slickNext();
+}
+
+prev() {
+  this.slickModal.slickPrev();
+}
   
-  removeSlide() {
-    this.slides.length = this.slides.length - 1;
-  }
-  
-  slickInit(e) {
-    console.log('slick initialized');
-  }
-  
-  breakpoint(e) {
-    console.log('breakpoint');
-  }
-  
-  afterChange(e) {
-    console.log('afterChange');
-  }
-  
-  beforeChange(e) {
-    console.log('beforeChange');
-  }
 }
